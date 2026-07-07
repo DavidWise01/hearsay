@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HEARSAY · did your marker come back to you secondhand · context-membrane detector · ROOT0</title>
+<meta name="description" content="hearsay by David Lee Wise / ROOT0: a membership-detection harness for the context/relay membrane. Its siblings catch your canary published on a page (forward-observers) or re-emitted from a model's weights (surfacing); hearsay catches it secondhand — re-emitted in another agent's output and relayed back to you. Only a PRIVATE marker in a THIRD-PARTY relay is a strong lead; a public one is gated as contamination. Hearsay is hearsay: a corroborated lead, never proof. Self-testable live in your browser.">
+<meta name="theme-color" content="#6d4d7a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEARSAY · did your marker come back to you secondhand — the context-membrane detector">
+<meta property="og:description" content="Your marker re-emitted in another agent's output and relayed back to you. Only a private marker in a third party's relay is a lead; a public one is gated as contamination. A corroborated lead, never proof. Verify the controls live.">
+<meta property="og:url" content="https://davidwise01.github.io/hearsay/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HEARSAY · did your marker come back to you secondhand">
+<meta name="twitter:description" content="The context/relay membrane detector. A corroborated lead, never proof. Verify the controls live in your browser.">
+<link rel="canonical" href="https://davidwise01.github.io/hearsay/">
+<style>
+:root{
+  --paper:#f0ebf0; --pan:#f8f4f8; --pan2:#efe8f0;
+  --ink:#281f2e; --ink2:#4f4358; --dim:#847a8c;
+  --plum:#6d4d7a; --plum2:#4d3559;
+  --canary:#c99128; --canary2:#9a6d18;
+  --signal:#bf4638; --signal2:#8f3025;
+  --line:#ddd0e0; --line2:#e8dfea;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --mono:ui-monospace,"SFMono-Regular","Cascadia Code","Consolas",monospace;
+  --shadow:0 1px 0 #fffc, 0 16px 34px -24px #2a1f3344;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  background-image:repeating-linear-gradient(0deg,#0000 0 33px,#6d4d7a0d 33px 34px)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+a{color:var(--plum2);text-underline-offset:2px}
+h1,h2,h3{line-height:1.13;font-weight:600;letter-spacing:.2px}
+.mono{font-family:var(--mono)}
+
+header.top{padding:38px 0 12px}
+.sealrow{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.seal{width:112px;height:112px;flex:none;filter:drop-shadow(0 8px 18px -10px #2a1f3355)}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--plum2)}
+h1.mh{font-size:clamp(31px,6.2vw,54px);margin:.08em 0 .12em;letter-spacing:.6px}
+.lede{font-size:18px;color:var(--ink2);max-width:64ch;margin:.35em 0 0}
+.lede b{color:var(--ink);font-weight:600}
+
+.asym{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 2px}
+.asym .a{flex:1 1 260px;border:1px solid var(--line);border-radius:12px;background:var(--pan);box-shadow:var(--shadow);padding:13px 16px}
+.asym .a .t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.asym .a.pos .t{color:var(--plum)} .asym .a.neg .t{color:var(--signal2)}
+.asym .a p{margin:.35em 0 0;font-size:14px;color:var(--ink2)}
+.asym .a p b{color:var(--ink)}
+
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin:22px 0 4px;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow);background:var(--pan)}
+.fstep{flex:1 1 150px;padding:14px 15px;border-right:1px solid var(--line2);position:relative;min-width:150px}
+.fstep:last-child{border-right:0}
+.fstep .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--plum)}
+.fstep .n{font-size:15.5px;font-weight:600;margin:3px 0 3px}
+.fstep .d{font-size:12.5px;color:var(--ink2)}
+.fstep .ar{position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--canary);font-size:16px;z-index:2;background:var(--pan);padding:2px 0}
+@media(max-width:720px){.fstep .ar{display:none}}
+
+section{padding:34px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--canary2)}
+h2.sec{font-size:clamp(23px,4vw,31px);margin:.14em 0 .18em}
+.sub{color:var(--ink2);max-width:70ch;margin:0 0 18px}
+
+.ctrls{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ctrl{border:1px solid var(--line);border-radius:12px;background:var(--pan);box-shadow:var(--shadow);padding:14px 15px;position:relative;overflow:hidden}
+.ctrl:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--cc)}
+.ctrl .cn{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--cc);line-height:1}
+.ctrl h3{font-size:14.5px;margin:8px 0 4px}
+.ctrl p{font-size:12.7px;color:var(--ink2);margin:0}
+@media(max-width:900px){.ctrls{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ctrls{grid-template-columns:1fr}}
+
+.op{border:1px solid var(--line);border-radius:15px;background:var(--pan);box-shadow:var(--shadow);overflow:hidden}
+.op .otop{display:flex;align-items:center;gap:10px;padding:11px 16px;background:linear-gradient(180deg,#fff8,#fff0);border-bottom:1px solid var(--line2);font-family:var(--mono);font-size:12px;color:var(--ink2);flex-wrap:wrap}
+.op .otop b{color:var(--plum2)}
+.opgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:0}
+.opcell{padding:16px 17px;border-right:1px solid var(--line2)}
+.opcell:last-child{border-right:0}
+.opcell h4{margin:0 0 9px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.reg{font-family:var(--mono);font-size:12px;background:#fdfbfd;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.reg .rh{display:grid;grid-template-columns:1fr auto;gap:8px;padding:6px 10px;background:var(--pan2);border-bottom:1px solid var(--line2);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.reg .row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px 10px;border-bottom:1px dashed var(--line);align-items:center}
+.reg .row:last-child{border-bottom:0}
+.reg .v{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reg .v .mk{color:var(--ink)}
+.tag{display:inline-block;border-radius:20px;padding:1px 8px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.tag.private{background:color-mix(in srgb,var(--plum) 15%,#fff);color:var(--plum2)}
+.tag.public{background:color-mix(in srgb,var(--canary) 22%,#fff);color:var(--canary2)}
+.tag.held{background:color-mix(in srgb,var(--signal) 14%,#fff);color:var(--signal2)}
+.tier{display:inline-block;border-radius:20px;padding:1px 8px;font-size:10.5px;font-weight:700}
+.tier.hard{background:var(--plum);color:#fff}
+.tier.contaminated{background:#e7dfc7;color:var(--canary2)}
+.tier.impossible{background:#e7dfc7;color:var(--dim)}
+.tier.control{background:var(--signal);color:#fff}
+.tier.none{background:#eee7ef;color:var(--dim)}
+.corr{font-family:var(--mono);font-size:10.5px;color:var(--plum2)}
+
+.relays{font-family:var(--mono);font-size:11.5px;background:#fdfbfd;border:1px solid var(--line);border-radius:9px;padding:8px;margin-top:10px;max-height:130px;overflow:auto}
+.relays .le{padding:4px 6px;border-bottom:1px dashed var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.relays .le:last-child{border-bottom:0}
+.relays .le b{color:var(--plum2)} .relays .le .pt{color:var(--dim)}
+
+.panelctl{margin:2px 0 10px}
+.togg{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;cursor:pointer}
+.togg input{margin-top:3px;flex:none;accent-color:var(--plum)}
+.togg .lab{color:var(--ink)} .togg .lab b{font-family:var(--mono);font-size:12px}
+.togg .lab .why{color:var(--ink2);font-size:12.3px}
+.runrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 4px}
+.btn{font-family:var(--mono);font-size:12.5px;border:1px solid var(--plum);background:color-mix(in srgb,var(--plum) 12%,#fff);color:var(--plum2);border-radius:8px;padding:9px 15px;cursor:pointer;font-weight:600;white-space:nowrap}
+.btn:hover{background:color-mix(in srgb,var(--plum) 22%,#fff)}
+.verdict{font-family:var(--mono);font-size:13px;line-height:1.5;border-radius:9px;padding:11px 13px;margin-top:10px;border:1px solid var(--line)}
+.verdict.clean{background:color-mix(in srgb,var(--plum) 9%,#fff);border-color:color-mix(in srgb,var(--plum) 35%,#fff);color:var(--plum2)}
+.verdict.invalid{background:color-mix(in srgb,var(--signal) 8%,#fff);border-color:color-mix(in srgb,var(--signal) 32%,#fff);color:var(--signal2)}
+.verdict .vh{font-weight:700;letter-spacing:.05em}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:11px;font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.stat b{color:var(--ink);font-weight:600}
+.opnote{padding:11px 17px;font-family:var(--mono);font-size:11px;color:var(--dim);background:var(--pan2);line-height:1.6;border-top:1px solid var(--line2)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--pan);padding:16px 18px;box-shadow:var(--shadow)}
+.card h3{font-size:14px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--plum2);margin:0 0 8px}
+.card.sig h3{color:var(--signal2)}
+.card p{margin:.35em 0;font-size:14.5px;color:var(--ink2)}
+.card ul{margin:.3em 0;padding-left:1.1em;font-size:13.8px;color:var(--ink2)}
+.card code{font-family:var(--mono);font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.src{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:14px;line-height:1.75}
+.backbar{margin:30px 0 0;padding:15px 0;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px}
+.backbar a{text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:var(--pan)}
+.backbar a:hover{border-color:var(--plum)}
+footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--dim)}
+@media(max-width:760px){.ctrls,.opgrid,.two{grid-template-columns:1fr}.opcell{border-right:0;border-bottom:1px solid var(--line2)}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="sealrow">
+    <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Hearsay insignia">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#6d4d7a" stroke-width="2.4"/>
+      <!-- two speakers, a marker passed ear to ear -->
+      <circle cx="34" cy="60" r="11" fill="none" stroke="#6d4d7a" stroke-width="1.8"/>
+      <circle cx="86" cy="60" r="11" fill="none" stroke="#6d4d7a" stroke-width="1.8"/>
+      <!-- the relayed marker (canary gold), hopping the gap -->
+      <path d="M45 60 q15 -16 30 0" fill="none" stroke="#9a6d18" stroke-width="1.4" stroke-dasharray="2 3" opacity=".85"/>
+      <circle cx="60" cy="49" r="5.5" fill="#c99128"/>
+      <circle cx="60" cy="49" r="5.5" fill="none" stroke="#8f3025" stroke-width="1.2"/>
+      <circle cx="60" cy="49" r="1.6" fill="#2a2412"/>
+      <!-- quote marks: it's secondhand -->
+      <text x="27" y="66" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#6d4d7a">&#8220;</text>
+      <text x="93" y="66" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#6d4d7a">&#8221;</text>
+      <text x="60" y="86" text-anchor="middle" font-family="ui-monospace,monospace" font-size="7" fill="#4f4358" letter-spacing="1.5">SECONDHAND</text>
+    </svg>
+    <div>
+      <div class="kick">the context / relay membrane</div>
+      <h1 class="mh">HEARSAY</h1>
+      <p class="lede">Did your marker come back to you <b>secondhand</b>. Its siblings catch your canary <b>published</b> on a page, or <b>re-emitted from a model's weights</b>. Hearsay catches the third thing: your marker turning up inside <b>some other agent's output</b>, relayed back to you in a transcript you did not author.</p>
+    </div>
+  </div>
+
+  <div class="asym">
+    <div class="a pos">
+      <div class="t">▲ corroboration is loud</div>
+      <p>A marker only <b>you</b> placed privately, standing alone in a <b>third party's</b> relay, after you planted it — carried by many <b>independent</b> relays, with a held-out arm proving nothing is fabricated. Hard to explain away.</p>
+    </div>
+    <div class="a neg">
+      <div class="t">▽ one whisper is weak</div>
+      <p>Hearsay is hearsay: secondhand, inadmissible alone. A single relay is a <b>lead</b>, never proof of who said what. And a negative means almost nothing — <b>most relays you never see.</b></p>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="fstep"><div class="t">detection</div><div class="n">the marker</div><div class="d">128-bit token, ~zero prior probability</div><span class="ar">→</span></div>
+    <div class="fstep"><div class="t">anchoring</div><div class="n">exposure</div><div class="d">private · public · held-out, and when</div><span class="ar">→</span></div>
+    <div class="fstep"><div class="t">comparison</div><div class="n">the relay</div><div class="d">secondhand text · stands-alone scan</div><span class="ar">→</span></div>
+    <div class="fstep"><div class="t">witness</div><div class="n">the controls</div><div class="d">held-out · contamination gate · corroboration</div></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+<section id="controls">
+  <div class="eyebrow">The instrument</div>
+  <h2 class="sec">Five controls that separate a detector from a rumor mill</h2>
+  <p class="sub">The name is the honesty: hearsay is weak evidence by definition, so the harness is built to never certify a lead it can't defend — and to say "lead," never "proof." Remove any one of these and it degrades into a machine that repeats what you want to hear.</p>
+  <div class="ctrls">
+    <div class="ctrl" style="--cc:var(--signal)">
+      <div class="cn">1</div><h3>Held-out negatives</h3>
+      <p>Markers placed <b>nowhere</b>, checked against every relay. If one appears, the relay is fabricated (or the pipeline is contaminated) — the run is invalid. This arm <i>is</i> the experiment.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--canary)">
+      <div class="cn">2</div><h3>Contamination gate</h3>
+      <p>A <b>public</b> marker in a relay is gated: the relayer might just be quoting your public copy. Only a <b>private</b> marker in a third party's relay is a strong lead.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--plum)">
+      <div class="cn">3</div><h3>Impossible gate</h3>
+      <p>A relay observed <b>before</b> you planted the marker can't be a relay of it — a provenance or harness error, gated out.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--plum)">
+      <div class="cn">4</div><h3>Stands-alone rule</h3>
+      <p>A marker counts only when it stands <b>alone</b>, never inside a larger token. A substring is not a marker — the citogenesis guard, shared with the family.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--signal)">
+      <div class="cn">5</div><h3>Corroboration ≠ proof</h3>
+      <p>A certified lead is scored by how many <b>independent</b> relays carry it. One is a whisper; five is a signal. It is always a lead — never proof of who relayed it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="selftest">
+  <div class="eyebrow">Verify first</div>
+  <h2 class="sec">The control arm, live</h2>
+  <p class="sub">Before trusting any relayed hit, you verify the controls. This is the harness's own logic — <code>relay.py</code> + <code>score.py</code> — ported faithfully to run in your browser: the same exposure axis, the same held-out arm, the same contamination and impossible gates, the same corroboration count. Fresh 128-bit markers are generated with WebCrypto; flip the three failure modes and watch the verdict break. Nothing leaves this page.</p>
+  <div class="op">
+    <div class="otop">◎ HARNESS · <b>run_panel + score</b>, ported verbatim — the real controls, running client-side (no network)</div>
+    <div class="opgrid">
+      <div class="opcell">
+        <h4>the registry &amp; the relays</h4>
+        <div class="reg" id="reg"></div>
+        <div class="relays" id="relays"></div>
+      </div>
+      <div class="opcell">
+        <h4>the panel · run &amp; score</h4>
+        <div class="panelctl" id="toggles">
+          <label class="togg"><input type="checkbox" id="tPub"><span class="lab"><b>publish marker #1 (contamination)</b><br><span class="why">make it public — its relays could just be quoting your public copy, so they gate out</span></span></label>
+          <label class="togg"><input type="checkbox" id="tImp"><span class="lab"><b>one relay predates the plant (impossible)</b><br><span class="why">a relay observed before you planted the marker can't be a relay of it</span></span></label>
+          <label class="togg"><input type="checkbox" id="tFab"><span class="lab"><b>inject a fabricated relay of a held-out marker</b><br><span class="why">a marker placed nowhere turns up in a relay — the control arm must refuse the run</span></span></label>
+        </div>
+        <div class="runrow">
+          <button class="btn" id="run">▸ run panel</button>
+          <button class="btn" id="regen" style="border-color:var(--line);background:var(--pan);color:var(--ink2)">↻ new markers</button>
+        </div>
+        <div class="verdict" id="verdict"></div>
+        <div class="stat" id="stat"></div>
+      </div>
+    </div>
+    <div class="opnote">Exposure is the axis, verbatim from <span class="mono">score.py</span>: a HARD lead needs <span class="mono">exposure=="private"</span>, <span class="mono">party=="third_party"</span>, and observed ≥ planted; a public marker gates to CONTAMINATED; a held-out marker in any relay spikes the control FPR and the run is <span class="mono">INVALID</span>. Corroboration = distinct relays per marker. Base-rate = checks × 2<sup>−128</sup>.</div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="eyebrow">The honest scope</div>
+  <h2 class="sec">What a certified lead does — and does not — mean</h2>
+  <div class="two">
+    <div class="card">
+      <h3>What it does mean</h3>
+      <p>A marker only you placed <b>privately</b>, before the relay, standing alone in a <b>third party's</b> relayed context, with a held-out control arm proving nothing is fabricated — corroborated by N independent relays.</p>
+      <p>That is real evidence your marker was <b>relayed</b> across the context membrane.</p>
+    </div>
+    <div class="card sig">
+      <h3>What it does not mean</h3>
+      <p>It does <b>not</b> prove who relayed it, what anyone "said," a training path, theft, or a licensing obligation. It is hearsay — a corroborated <b>lead</b>, temporal and structural, never a causal or legal finding.</p>
+      <p>And a <b>negative</b> means almost nothing: most relays you never see.</p>
+    </div>
+  </div>
+</section>
+
+<section id="honesty">
+  <div class="eyebrow">The colophon</div>
+  <h2 class="sec">Sound — and the limits it names out loud</h2>
+  <div class="two">
+    <div class="card">
+      <h3>Sound</h3>
+      <ul>
+        <li>The <b>controls are real and verifiable</b>: <code>python selftest.py</code> proves — with no network — that a private marker relayed by third parties is certified and corroborated, a held-out marker in a relay spikes FPR and the run is <b>refused</b>, a public marker is gated as CONTAMINATED, a pre-plant relay is gated as IMPOSSIBLE, a run with no control arm is refused, and a marker inside a larger token does not match.</li>
+        <li>The <b>exposure axis</b> is the honest move: it removes the explainable-away hit (a public marker anyone could quote) from the certified set — on purpose.</li>
+        <li>The self-test above is that exact logic — <code>run_panel</code> + <code>score</code> — running client-side.</li>
+      </ul>
+    </div>
+    <div class="card sig">
+      <h3>Limits (and it says so)</h3>
+      <ul>
+        <li><b>Provenance is claimed.</b> The gates are only as honest as the party and timestamp you record on each relay.</li>
+        <li><b>Private can leak.</b> A private marker can reach public by routes you don't control; when in doubt, mark it public — the gate errs toward <i>fewer</i> certified leads.</li>
+        <li><b>One membrane only.</b> This is the context membrane. For the published one use forward-observers; for the weights one use surfacing.</li>
+        <li><b>Hearsay is hearsay.</b> Even a corroborated lead is a lead. It never becomes proof of who relayed what.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src">
+    SOURCE · the runnable kit — <a href="https://github.com/DavidWise01/hearsay">github.com/DavidWise01/hearsay</a> · <code>canary.py</code> (128-bit markers + exposure axis) · <code>registry.py</code> · <code>relay.py</code> (stands-alone scan) · <code>score.py</code> (held-out arm + contamination + impossible + corroboration) · <code>harness.py</code> · <code>selftest.py</code> (plant-then-relay, no network). Closure-Loop layered: Detection → Anchoring → Comparison → Witness → Lineage.
+  </div>
+  <div class="backbar">
+    <a href="https://github.com/DavidWise01/hearsay">⧉ the code (GitHub)</a>
+    <a href="https://davidwise01.github.io/forward-observers/">◎ forward-observers · published membrane</a>
+    <a href="https://davidwise01.github.io/surfacing/">▽ surfacing · weights membrane</a>
+    <a href="https://davidwise01.github.io/ud0/">⌂ ud0 · the atlas</a>
+    <a href="#selftest">↑ verify</a>
+  </div>
+</section>
+
+<footer>
+  HEARSAY · the context / relay membrane detector · David Lee Wise / ROOT0 / TriPod LLC · CC-BY-ND-4.0<br>
+  a corroborated lead is loud · one whisper is weak · a negative means almost nothing · hearsay is hearsay
+</footer>
+</main>
+
+<script>
+(function(){
+"use strict";
+// ---- faithful client-side port of relay.py / score.py -------------------------
+var HEX_LEN=32;
+function newValue(){
+  var a=new Uint8Array(16); crypto.getRandomValues(a);
+  return Array.from(a).map(function(b){return b.toString(16).padStart(2,"0");}).join("");
+}
+// stands-alone scan (relay.scan_text): value must not be flanked by [A-Za-z0-9_-]
+function standsAlone(text, v){
+  var re=new RegExp("(?<![A-Za-z0-9_-])"+v.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?![A-Za-z0-9_-])");
+  try{ return re.test(text); }catch(e){
+    return new RegExp("(^|[^A-Za-z0-9_-])"+v+"([^A-Za-z0-9_-]|$)").test(text);
+  }
+}
+function before(a,b){ if(!a||!b) return false; return a.slice(0,19) < b.slice(0,19); }
+function tier(d){
+  if(d.held_out) return "control";
+  if(d.party==="self") return "self";
+  if(d.party==="public_index") return "published";
+  if(before(d.observed_utc, d.planted_utc)) return "impossible";
+  if(d.exposure==="public") return "contaminated";
+  if(d.exposure==="private") return "hard";
+  return "none";
+}
+function score(detections, registry){
+  var held=registry.filter(function(e){return e.held_out;});
+  detections.forEach(function(d){ d.tier=tier(d); });
+  var controlHits={}; detections.forEach(function(d){ if(d.tier==="control") controlHits[d.value]=1; });
+  var fpr = held.length ? Object.keys(controlHits).length/held.length : null;
+  var hard={}; detections.forEach(function(d){ if(d.tier==="hard"){ (hard[d.value]=hard[d.value]||{})[d.relay_id]=1; } });
+  var contaminated={}, impossible={};
+  detections.forEach(function(d){ if(d.tier==="contaminated") contaminated[d.value]=1; if(d.tier==="impossible") impossible[d.value]=1; });
+  var checks=Math.max(1,detections.length);
+  var baseRate=checks*Math.pow(2,-(HEX_LEN*4));
+  var verdict, certified;
+  if(!held.length){ verdict={k:"invalid",h:"INVALID",t:"no held-out control arm was run (performative)"}; certified={}; }
+  else if(fpr && fpr>0){ verdict={k:"invalid",h:"INVALID",t:"control FPR="+fpr.toFixed(2)+" — the harness is manufacturing hearsay (fabricated/contaminated relay); no lead is trustworthy"}; certified={}; }
+  else {
+    certified=hard;
+    var n=Object.keys(certified).length;
+    verdict={k:"clean",h:"CLEAN",t:"control FPR=0 over "+held.length+" held-out; "+n+" corroborated lead(s) — hearsay, needs corroboration"};
+  }
+  var cc={}; Object.keys(certified).forEach(function(v){ cc[v]=Object.keys(certified[v]).length; });
+  var hc={}; Object.keys(hard).forEach(function(v){ hc[v]=Object.keys(hard[v]).length; });
+  return {verdict:verdict, certified:cc, hard:hc, contaminated:Object.keys(contaminated),
+          impossible:Object.keys(impossible), controlFpr:fpr, heldN:held.length, baseRate:baseRate,
+          detections:detections};
+}
+// ---- the demo registry & relays -----------------------------------------------
+var PLANT="2026-01-01T00:00:00Z";
+var REG=[], RELAYS=[], lastScore=null;
+function build(){
+  REG=[
+    {value:newValue(), exposure:"private", planted_utc:PLANT, label:"marker #1"},
+    {value:newValue(), exposure:"private", planted_utc:PLANT, label:"marker #2"},
+    {value:newValue(), exposure:"private", planted_utc:PLANT, label:"marker #3"},
+    {value:newValue(), exposure:"held_out", planted_utc:null, label:"control A"},
+    {value:newValue(), exposure:"held_out", planted_utc:null, label:"control B"}
+  ];
+  REG.forEach(function(e){ e.held_out = e.exposure==="held_out"; });
+}
+function relayText(v){ return "screenshot: the assistant replied — "+v+" — end."; }
+function buildRelays(){
+  var pub=document.getElementById("tPub").checked;
+  var imp=document.getElementById("tImp").checked;
+  var fab=document.getElementById("tFab").checked;
+  REG[0].exposure = pub ? "public" : "private";        // toggle A: contaminate marker #1
+  RELAYS=[
+    {text:relayText(REG[0].value), party:"third_party", observed_utc: imp?"2025-06-01T00:00:00Z":"2026-03-01T00:00:00Z", source:"userA screenshot"},
+    {text:relayText(REG[0].value), party:"third_party", observed_utc:"2026-03-02T00:00:00Z", source:"userB forward"},
+    {text:relayText(REG[1].value), party:"third_party", observed_utc:"2026-03-01T00:00:00Z", source:"userC paste"},
+    {text:relayText(REG[2].value), party:"third_party", observed_utc:"2026-03-05T00:00:00Z", source:"userD transcript"}
+  ];
+  if(fab) RELAYS.push({text:relayText(REG[3].value), party:"third_party", observed_utc:"2026-03-01T00:00:00Z", source:"fabricated"});
+}
+function collect(){
+  var det=[];
+  RELAYS.forEach(function(r,ri){
+    REG.forEach(function(e){
+      if(standsAlone(r.text, e.value))
+        det.push({value:e.value, exposure:e.exposure, held_out:e.held_out, planted_utc:e.planted_utc,
+                  party:r.party, observed_utc:r.observed_utc, relay_id:ri});
+    });
+  });
+  return det;
+}
+function tierForCanary(e){
+  if(!lastScore) return null;
+  if(e.held_out) return (lastScore.controlFpr && lastScore.controlFpr>0 &&
+      lastScore.detections.some(function(d){return d.value===e.value && d.tier==="control";})) ? "control" : "none";
+  if(lastScore.certified[e.value]) return "hard";
+  if(lastScore.contaminated.indexOf(e.value)!==-1) return "contaminated";
+  if(lastScore.impossible.indexOf(e.value)!==-1) return "impossible";
+  return "none";
+}
+function renderReg(){
+  var rows=REG.map(function(e){
+    var tg='<span class="tag '+(e.held_out?"held":e.exposure)+'">'+(e.held_out?"held-out":e.exposure)+'</span>';
+    var t=tierForCanary(e), badge="", corr="";
+    if(t && t!=="none"){ badge=' <span class="tier '+t+'">'+t.toUpperCase()+'</span>';
+      if(t==="hard" && lastScore.certified[e.value]) corr=' <span class="corr">×'+lastScore.certified[e.value]+'</span>'; }
+    return '<div class="row"><span class="v"><span class="mk">'+e.value.slice(0,20)+'…</span></span>'+
+           '<span style="text-align:right">'+tg+badge+corr+'</span></div>';
+  }).join('');
+  document.getElementById("reg").innerHTML='<div class="rh"><span>marker</span><span>exposure · tier</span></div>'+rows;
+}
+function renderRelays(){
+  var el=document.getElementById("relays");
+  el.innerHTML=RELAYS.map(function(r){
+    var which="?"; REG.forEach(function(e){ if(standsAlone(r.text,e.value)) which=e.label; });
+    return '<div class="le"><b>'+which+'</b> @ '+r.source+' <span class="pt">· '+r.party+' · '+(r.observed_utc||"").slice(0,10)+'</span></div>';
+  }).join('');
+}
+function run(){
+  buildRelays();
+  var det=collect();
+  lastScore=score(det, REG);
+  var vd=document.getElementById("verdict");
+  vd.className="verdict "+lastScore.verdict.k;
+  vd.innerHTML='<span class="vh">'+lastScore.verdict.h+'</span> · '+lastScore.verdict.t;
+  var certCount=Object.keys(lastScore.certified).length;
+  document.getElementById("stat").innerHTML=
+    '<div>held-out controls: <b>'+lastScore.heldN+'</b></div>'+
+    '<div>control FPR: <b>'+(lastScore.controlFpr===null?"—":lastScore.controlFpr.toFixed(2))+'</b></div>'+
+    '<div>contaminated: <b>'+lastScore.contaminated.length+'</b></div>'+
+    '<div>impossible: <b>'+lastScore.impossible.length+'</b></div>'+
+    '<div>certified leads: <b>'+certCount+'</b></div>'+
+    '<div>base-rate: <b>'+lastScore.baseRate.toExponential(1)+'</b></div>';
+  renderReg(); renderRelays();
+}
+function regen(){ build(); lastScore=null; buildRelays(); renderReg(); renderRelays();
+  document.getElementById("verdict").className="verdict";
+  document.getElementById("verdict").innerHTML='<span style="color:var(--dim)">fresh markers planted — press <b>run panel</b> to scan the relays</span>';
+  document.getElementById("stat").innerHTML='';
+}
+["tPub","tImp","tFab"].forEach(function(id){ document.getElementById(id).addEventListener("change", function(){ buildRelays(); renderRelays(); }); });
+document.getElementById("run").addEventListener("click", run);
+document.getElementById("regen").addEventListener("click", regen);
+build(); regen();
+})();
+</script>
+</body>
+</html>
