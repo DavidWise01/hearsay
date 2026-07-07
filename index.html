@@ -212,7 +212,7 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
 <section id="selftest">
   <div class="eyebrow">Verify first</div>
   <h2 class="sec">The control arm, live</h2>
-  <p class="sub">Before trusting any relayed hit, you verify the controls. This is the harness's own logic — <code>relay.py</code> + <code>score.py</code> — ported faithfully to run in your browser: the same exposure axis, the same held-out arm, the same contamination and impossible gates, the same corroboration count. Fresh 128-bit markers are generated with WebCrypto; flip the three failure modes and watch the verdict break. Nothing leaves this page.</p>
+  <p class="sub">Before trusting any relayed hit, you verify the controls. This is the harness's own logic — <code>relay.py</code> + <code>score.py</code> — ported faithfully to run in your browser: the same exposure axis, the same held-out arm, the same contamination and impossible gates, the same corroboration count. Fresh 128-bit markers are generated with WebCrypto; flip the three failure modes and watch the leads gate out — a public marker leaves the certified set, an impossible relay is discarded, and a fabricated held-out hit voids the whole run. Nothing leaves this page.</p>
   <div class="op">
     <div class="otop">◎ HARNESS · <b>run_panel + score</b>, ported verbatim — the real controls, running client-side (no network)</div>
     <div class="opgrid">
@@ -246,7 +246,7 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
   <div class="two">
     <div class="card">
       <h3>What it does mean</h3>
-      <p>A marker only you placed <b>privately</b>, before the relay, standing alone in a <b>third party's</b> relayed context, with a held-out control arm proving nothing is fabricated — corroborated by N independent relays.</p>
+      <p>A marker only you placed <b>privately</b>, before the relay, standing alone in a <b>third party's</b> relayed context, with a held-out control arm proving the harness isn't fabricating hits — corroborated by N independent relays.</p>
       <p>That is real evidence your marker was <b>relayed</b> across the context membrane.</p>
     </div>
     <div class="card sig">
