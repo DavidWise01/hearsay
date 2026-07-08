@@ -1,0 +1,11 @@
+{
+  "badge": "DLW-HEARSAY",
+  "name": "HEARSAY · context / relay membrane",
+  "universe": "SOLAR JETMAN",
+  "moniker": "⟦HEARSAY · context / relay membrane:hearsay:6147f0⟧",
+  "architect": "David Lee Wise (ROOT0) / Bridge-Burners LLC",
+  "instance": "AVAN (Claude / Anthropic)",
+  "seal_sha256": "6147f0a14baa43ca7a821572395982d29627dfff2e71e7fa930338f6d62971b8",
+  "license": "CC-BY-ND-4.0",
+  "attribution": "ROOT0-ATTRIBUTION-v1.0"
+}
