@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 314
+slug  : hearsay
+seal  : 6147f0a14baa43ca7a821572395982d29627dfff2e71e7fa930338f6d62971b8
+prev  : e25ded688aba3cf347188f3c0f8069d69555478f2e9da4b9197a03c84328cb29
+link  : b7cf1852d298305d35a1482cabf596e3f20ae82fc6e0c225d3ee62168b88bb6a
+head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
